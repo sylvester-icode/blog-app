@@ -2,14 +2,14 @@
 export const instant = false;
 
 import { notFound } from "next/navigation"
-import { getBlogById } from "../../api/blogs"
-import { addLikes } from "@/app/actions/notes"
+import { getBlogById } from "../../services/blogs"
+import { addLikes } from "@/app/actions/blogs"
 
 const blogPage = async ({params}: {params : Promise<{id : string}>})=>{
 
     const {id} = await  params
   
-    const blog =  getBlogById(Number(id))
+    const blog = await getBlogById(Number(id))
 
     if (!blog) {
        notFound() 

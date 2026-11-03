@@ -1,11 +1,11 @@
 export const instant = false
-import { getBlogs } from "../api/blogs";
-import {searchAction}from '../actions/notes'
+import { getBlogs } from "../services/blogs";
+import {searchAction}from '../actions/blogs'
 
 const blogsPage = async ({searchParams} : {searchParams : Promise<{title? : string}>})=>{
 
 const {title} = await searchParams
-const blogs = getBlogs()
+const blogs = await getBlogs()
 
 const showList = title === undefined ? blogs : blogs.filter((blog)=>blog.title.toLocaleLowerCase() === title.toLocaleLowerCase())
 
