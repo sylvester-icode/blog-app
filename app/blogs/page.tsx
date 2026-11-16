@@ -64,7 +64,7 @@ const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: str
                 key={blog?.id ? String(blog.id) : index} 
                 className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-md transition-all duration-200"
               >
-                <Link href={/blogs/} className="flex-1">
+                <Link href={`/blogs/${blog?.id || ""}`} className="flex-1">
                   <div>
                     {/* Safe Title Rendering */}
                     <h2 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2">
