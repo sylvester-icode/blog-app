@@ -1,4 +1,4 @@
-export const instant = false
+﻿export const instant = false
 import { getBlogs } from "../services/blogs";
 import { searchAction } from '../actions/blogs'
 import Link from "next/link";
@@ -8,38 +8,6 @@ const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: str
   const { title } = await searchParams
   const blogs = await getBlogs()
 
-<<<<<<< HEAD
-const showList = title === undefined ? blogs : blogs.filter((blog)=>blog.title.toLocaleLowerCase() === title.toLocaleLowerCase())
-
-
-    return (
-        <>
-        <div>
-            <form className="mt-6" action={searchAction}>
-              <label>
-                <input placeholder="Search by title" type="text" name='title'>
-                </input>
-
-                </label>
-                
-                <button type="submit">Search</button>
-                </form>
-            {showList.map((blog)=>(<ul key={blog.id}>
-                <h1>{blog.title}</h1>
-                <h3>{blog.author}</h3>
-                <h3>{blog.url}</h3>
-                <h3>{blog.likes}</h3>
-
-            </ul>))}
-            </div>
-         
-
-        </>
-      ) 
-}
-
-export default blogsPage
-=======
   // Safe checks to avoid crashing if title or blog arrays have format anomalies
   const showList = title === undefined 
     ? (blogs || []) 
@@ -75,7 +43,7 @@ export default blogsPage
               />
             </div>
             <button 
-             data-testid="search-button"
+              data-testid="search-button"
               type="submit" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 font-semibold text-sm transition-colors cursor-pointer shrink-0"
             >
@@ -96,27 +64,25 @@ export default blogsPage
                 key={blog?.id ? String(blog.id) : index} 
                 className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm hover:shadow-md transition-all duration-200"
               >
-                <Link href={`/blogs/${blog?.id || ""}`} className="flex-1">
-                 <div>
-                  {/* Safe Title Rendering */}
-                  <h2 data-testid="blogs-list"
-                  className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2">
-                    {blog?.title || "Untitled Blog"}
-                  </h2>
-                  
-                  {/* Safe Author Rendering */}
-                  <p className="mt-2 text-xs font-medium text-gray-500 dark:text-gray-400">
-                    By <span className="text-gray-800 dark:text-gray-200 font-semibold">{blog?.author || "Unknown"}</span>
-                  </p>
-                </div>
+                <Link href={/blogs/} className="flex-1">
+                  <div>
+                    {/* Safe Title Rendering */}
+                    <h2 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2">
+                      {blog?.title || "Untitled Blog"}
+                    </h2>
+                    
+                    {/* Safe Author Rendering */}
+                    <p className="mt-2 text-xs font-medium text-gray-500 dark:text-gray-400">
+                      By <span className="text-gray-800 dark:text-gray-200 font-semibold">{blog?.author || "Unknown"}</span>
+                    </p>
+                  </div>
                 </Link>
-                
 
                 {/* Footer Metrics Row */}
                 <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between">
                   {/* Safe Likes Counter (Guards against Null values) */}
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-400 border border-red-100 dark:border-red-900/30">
-                     {blog?.likes !== undefined && blog?.likes !== null ? String(blog.likes) : "0"} likes
+                    {blog?.likes !== undefined && blog?.likes !== null ? String(blog.likes) : "0"} likes
                   </span>
                   
                   {/* Safe Outbound Link Button */}
@@ -147,4 +113,3 @@ export default blogsPage
 }
 
 export default blogsPage;
->>>>>>> 0a2f119 (Update blog app and add tests)
