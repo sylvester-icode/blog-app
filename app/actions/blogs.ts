@@ -6,6 +6,9 @@ import {redirect} from "next/navigation"
 import { getBlogs } from "../services/blogs"
 import { auth } from "@/auth"
 
+const name = "patrick"
+
+console.log(name)
 export interface BlogActionState {
    errors: {
     title?: string;
