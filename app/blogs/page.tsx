@@ -1,4 +1,4 @@
-﻿export const instant = false
+export const instant = false
 import { getBlogs } from "../services/blogs";
 import { searchAction } from '../actions/blogs'
 import Link from "next/link";
@@ -67,7 +67,8 @@ const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: str
                 <Link href={`/blogs/${blog?.id || ""}`} className="flex-1">
                   <div>
                     {/* Safe Title Rendering */}
-                    <h2 className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2">
+                    <h2
+                      className="text-xl font-bold text-gray-900 dark:text-white line-clamp-2">
                       {blog?.title || "Untitled Blog"}
                     </h2>
                     
