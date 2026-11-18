@@ -60,10 +60,11 @@ const CreateBlog = () => {
             
             {/* Title Field Input Block */}
             <div className="form-control w-full">
-              <label className="label pt-0">
+              <label htmlFor="title" className="label pt-0">
                 <span className="label-text font-semibold text-base-content">Title</span>
               </label>
               <input 
+               id="title"
                 type="text" 
                 name="title" 
                 placeholder="e.g., Demystifying Tailwind CSS v4 Hooks"
@@ -82,10 +83,11 @@ const CreateBlog = () => {
 
             {/* Author Field Input Block */}
             <div className="form-control w-full">
-              <label className="label pt-0">
+              <label htmlFor="author" className="label pt-0">
                 <span className="label-text font-semibold text-base-content">Author</span>
               </label>
               <input 
+                id="author"
                 type="text" 
                 name="author" 
                 placeholder="Your name or organization"
@@ -104,10 +106,11 @@ const CreateBlog = () => {
 
             {/* URL Field Input Block */}
             <div className="form-control w-full">
-              <label className="label pt-0">
+              <label htmlFor="url" className="label pt-0">
                 <span className="label-text font-semibold text-base-content">URL</span>
               </label>
               <input 
+                id="url"
                 type="text" 
                 name="url" 
                 placeholder="https://example.com"

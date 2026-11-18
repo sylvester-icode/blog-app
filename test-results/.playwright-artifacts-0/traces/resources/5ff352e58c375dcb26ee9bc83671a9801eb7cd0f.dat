@@ -1,0 +1,37 @@
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_$ACTION_REF_1"
+
+
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_$ACTION_1:0"
+
+{"id":"60f339757f6985ff7ecdec38a8a56e3857b282bd20","bound":"$@1"}
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_$ACTION_1:1"
+
+[{"errors":{},"values":{"username":"","password":"","name":"","confirmpassword":""}}]
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_$ACTION_KEY"
+
+k2790871ce02481ae848abbefad62747a
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_username"
+
+usr
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_name"
+
+Test User
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_password"
+
+testpass123
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="_1_confirmpassword"
+
+testpass123
+------WebKitFormBoundaryu2Qun78rA1RmFfGq
+Content-Disposition: form-data; name="0"
+
+[{"errors":{},"values":{"username":"","password":"","name":"","confirmpassword":""}},"$K1"]
+------WebKitFormBoundaryu2Qun78rA1RmFfGq--

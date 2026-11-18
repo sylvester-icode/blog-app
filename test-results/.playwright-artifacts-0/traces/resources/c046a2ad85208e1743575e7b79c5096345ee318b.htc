@@ -1,0 +1,3 @@
+0:{"a":"$@1","q":"","i":true,"b":"development"}
+1:D"$2"
+1:{"errors":{"username":"username must have at least 4 characters"},"values":{"username":"usr","password":"testpass123","name":"Test User","confirmpassword":"testpass123"}}

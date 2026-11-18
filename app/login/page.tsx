@@ -3,9 +3,11 @@
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { useNotification } from "../components/NotificationContext"
 
 export default function LoginPage() {
 
+    const { showNotification } = useNotification()
   const router = useRouter()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -14,7 +16,7 @@ export default function LoginPage() {
     e.preventDefault()
     setError("")
     setLoading(true)
-    
+
     const formData = new FormData(e.currentTarget)
 
     const result = await signIn("credentials", {
@@ -28,8 +30,8 @@ export default function LoginPage() {
     if (result?.error) {
       setError("Invalid username or password")
     } else {
+      showNotification("user has logged in successfully", "success")
       router.push("/")
-      router.refresh()
     }
   }
 
@@ -52,10 +54,11 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit}>
             <div className="form-control mb-4">
-              <label className="label">
+              <label  htmlFor="username" className="label">
                 <span className="label-text font-medium">Username</span>
               </label>
               <input 
+                id="username"
                 type="text" 
                 name="username"
                 placeholder="Enter your username" 
@@ -65,10 +68,11 @@ export default function LoginPage() {
             </div>
 
             <div className="form-control mb-6">
-              <label className="label">
+              <label htmlFor="password" className="label">
                 <span className="label-text font-medium">Password</span>
               </label>
               <input 
+                id="password"
                 type="password" 
                 name="password"
                 placeholder="••••••••" 
