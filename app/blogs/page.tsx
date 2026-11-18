@@ -1,4 +1,4 @@
-export const instant = false
+export const dynamic = "force-dynamic"
 import { getBlogs } from "../services/blogs";
 import Link from "next/link";
 
