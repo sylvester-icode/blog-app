@@ -1,16 +1,17 @@
-export const dynamic = "force-dynamic"
+import { connection } from "next/server";
 import { getBlogs } from "../services/blogs";
 import Link from "next/link";
 
 const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: string }> }) => {
-  const { title } = await searchParams
-  const blogs = await getBlogs()
+  await connection();
+  const { title } = await searchParams;
+  const blogs = await getBlogs();
 
   const showList = !title
     ? (blogs || [])
     : (blogs || []).filter((blog) =>
         blog?.title?.toLowerCase().includes(title.toLowerCase())
-      )
+      );
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8 font-sans text-gray-900 dark:text-gray-100">
@@ -54,7 +55,10 @@ const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: str
 
         {/* Collection Stream Grid */}
         {!showList || showList.length === 0 ? (
-          <div className="text-center py-16 bg-white dark:bg-gray-800 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 shadow-sm">
+          <div
+            data-testid="blogs-list"
+            className="text-center py-16 bg-white dark:bg-gray-800 rounded-2xl border border-dashed border-gray-300 dark:border-gray-700 shadow-sm"
+          >
             <p className="text-gray-500 dark:text-gray-400 text-lg font-medium">
               No articles found matching that title.
             </p>
@@ -119,7 +123,7 @@ const blogsPage = async ({ searchParams }: { searchParams: Promise<{ title?: str
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default blogsPage;

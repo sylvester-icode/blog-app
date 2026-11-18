@@ -1,0 +1,86 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: blog-app.spec.ts >> Blog Application >> Navigation >> user can navigate to blogs page
+- Location: tests\blog-app.spec.ts:152:5
+
+# Error details
+
+```
+Error: Failed to reset database: 500 Internal Server Error - <!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><noscript data-n-css=""></noscript><script src="/_next/static/chunks/node_modules_next_dist_compiled_14ibvnakj0v0q._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_shared_lib_196_nl_l493zz._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_app_0yrdk3r5ni6li.js" defer=""></script><script src="/_next/static/chunks/%5Bnext%5D_entry_page-loader_ts_0z3haqkb6-d3h._.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_cjs_react-dom-client_development_1nq9a-7w2rk6e.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_cjs_react-dom_development_0d3scg3xnfy6h.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_13voigl36lis-._.js" defer=""></script><script src="/_next/static/chunks/node_modules_10e2-xouig913._.js" defer=""></script><script src="/_next/static/chunks/%5Broot-of-the-server%5D__0l4r13lr2xywy._.js" defer=""></script><script src="/_next/static/chunks/pages__app_0du2_q-cjzmdk._.js" defer=""></script><script src="/_next/static/chunks/turbopack-pages__app_1vrma7lqc30ul._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_compiled_1rva-8xykwpb-._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_shared_lib_1pjif-zr9-ese._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_client_0tk8-26rtzlym._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_1atto1n9flxez._.js" defer=""></script><script src="/_next/static/chunks/%5Bnext%5D_entry_page-loader_ts_1aoli7mnyw1hs._.js" defer=""></script><script src="/_next/static/chunks/node_modules_1u_-h1v56pkhg._.js" defer=""></script><script src="/_next/static/chunks/%5Broot-of-the-server%5D__02sxxpho_3e87._.js" defer=""></script><script src="/_next/static/chunks/pages__error_1gb68scai-n28._.js" defer=""></script><script src="/_next/static/chunks/turbopack-pages__error_1pgzq42osfznh._.js" defer=""></script><script src="/_next/static/development/_buildManifest.js" defer=""></script><script src="/_next/static/development/_ssgManifest.js" defer=""></script><script src="/_next/static/development/_clientMiddlewareManifest.js" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"statusCode":500,"hostname":"localhost"}},"page":"/_error","query":{},"buildId":"development","isFallback":false,"err":{"name":"Error","source":"server","message":"./app/blogs/page.tsx:1:14\nError: Route segment config \"dynamic\" is not compatible with `nextConfig.cacheComponents`. Please remove it.\n\u003e 1 | export const dynamic = \"force-dynamic\"\n    |              ^^^^^^^\n  2 | import { getBlogs } from \"../services/blogs\";\n  3 | import Link from \"next/link\";\n  4 |\n\nEcmascript file had an error\n\n","stack":"Error: ./app/blogs/page.tsx:1:14\n\u001b[1m\u001b[31mError\u001b[39m: Route segment config \"dynamic\" is not compatible with `nextConfig.cacheComponents`. Please remove it.\u001b[22m\n\u001b[31m\u001b[1m\u003e\u001b[0m \u001b[90m1 |\u001b[0m \u001b[36mexport\u001b[0m \u001b[36mconst\u001b[0m dynamic = \u001b[32m\"force-dynamic\"\u001b[0m\n  \u001b[90m  |\u001b[0m              \u001b[31m\u001b[1m^^^^^^^\u001b[0m\n  \u001b[90m2 |\u001b[0m \u001b[36mimport\u001b[0m { getBlogs } \u001b[36mfrom\u001b[0m \u001b[32m\"../services/blogs\"\u001b[0m;\n  \u001b[90m3 |\u001b[0m \u001b[36mimport\u001b[0m \u001b[33mLink\u001b[0m \u001b[36mfrom\u001b[0m \u001b[32m\"next/link\"\u001b[0m;\n  \u001b[90m4 |\u001b[0m\n\nEcmascript file had an error\n\n\n    at Object.getCompilationErrors (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\hot-reloader-turbopack.js:1518:37)\n    at DevBundlerService.getCompilationError (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\lib\\dev-bundler-service.js:63:55)\n    at DevServer.getCompilationError (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:692:42)\n    at DevServer.findPageComponents (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:662:43)\n    at async DevServer.renderErrorToResponseImpl (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\base-server.js:2060:26)"},"gip":true,"scriptLoader":[]}</script></body></html>
+```
+
+# Test source
+
+```ts
+  1  | import { Page } from "@playwright/test"
+  2  | 
+  3  | const baseUrl = "http://localhost:3000"
+  4  | 
+  5  | export const resetDatabase = async () => {
+  6  |   const response = await fetch(`${baseUrl}/api/testing/reset`, {
+  7  |     method: "DELETE",
+  8  |   })
+  9  |   if (!response.ok) {
+  10 |     const errorText = await response.text()
+> 11 |     throw new Error(
+     |           ^ Error: Failed to reset database: 500 Internal Server Error - <!DOCTYPE html><html><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width" data-next-head=""/><style data-next-hide-fouc="true">body{display:none}</style><noscript data-next-hide-fouc="true"><style>body{display:block}</style></noscript><noscript data-n-css=""></noscript><script src="/_next/static/chunks/node_modules_next_dist_compiled_14ibvnakj0v0q._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_shared_lib_196_nl_l493zz._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_client_16lnmlosr3ca7._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_1gdrd03q-xsfc._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_app_0yrdk3r5ni6li.js" defer=""></script><script src="/_next/static/chunks/%5Bnext%5D_entry_page-loader_ts_0z3haqkb6-d3h._.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_cjs_react-dom-client_development_1nq9a-7w2rk6e.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_cjs_react-dom_development_0d3scg3xnfy6h.js" defer=""></script><script src="/_next/static/chunks/node_modules_react-dom_13voigl36lis-._.js" defer=""></script><script src="/_next/static/chunks/node_modules_10e2-xouig913._.js" defer=""></script><script src="/_next/static/chunks/%5Broot-of-the-server%5D__0l4r13lr2xywy._.js" defer=""></script><script src="/_next/static/chunks/pages__app_0du2_q-cjzmdk._.js" defer=""></script><script src="/_next/static/chunks/turbopack-pages__app_1vrma7lqc30ul._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_compiled_1rva-8xykwpb-._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_shared_lib_1pjif-zr9-ese._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_client_0tk8-26rtzlym._.js" defer=""></script><script src="/_next/static/chunks/node_modules_next_dist_1atto1n9flxez._.js" defer=""></script><script src="/_next/static/chunks/%5Bnext%5D_entry_page-loader_ts_1aoli7mnyw1hs._.js" defer=""></script><script src="/_next/static/chunks/node_modules_1u_-h1v56pkhg._.js" defer=""></script><script src="/_next/static/chunks/%5Broot-of-the-server%5D__02sxxpho_3e87._.js" defer=""></script><script src="/_next/static/chunks/pages__error_1gb68scai-n28._.js" defer=""></script><script src="/_next/static/chunks/turbopack-pages__error_1pgzq42osfznh._.js" defer=""></script><script src="/_next/static/development/_buildManifest.js" defer=""></script><script src="/_next/static/development/_ssgManifest.js" defer=""></script><script src="/_next/static/development/_clientMiddlewareManifest.js" defer=""></script><noscript id="__next_css__DO_NOT_USE__"></noscript></head><body><div id="__next"></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"statusCode":500,"hostname":"localhost"}},"page":"/_error","query":{},"buildId":"development","isFallback":false,"err":{"name":"Error","source":"server","message":"./app/blogs/page.tsx:1:14\nError: Route segment config \"dynamic\" is not compatible with `nextConfig.cacheComponents`. Please remove it.\n\u003e 1 | export const dynamic = \"force-dynamic\"\n    |              ^^^^^^^\n  2 | import { getBlogs } from \"../services/blogs\";\n  3 | import Link from \"next/link\";\n  4 |\n\nEcmascript file had an error\n\n","stack":"Error: ./app/blogs/page.tsx:1:14\n\u001b[1m\u001b[31mError\u001b[39m: Route segment config \"dynamic\" is not compatible with `nextConfig.cacheComponents`. Please remove it.\u001b[22m\n\u001b[31m\u001b[1m\u003e\u001b[0m \u001b[90m1 |\u001b[0m \u001b[36mexport\u001b[0m \u001b[36mconst\u001b[0m dynamic = \u001b[32m\"force-dynamic\"\u001b[0m\n  \u001b[90m  |\u001b[0m              \u001b[31m\u001b[1m^^^^^^^\u001b[0m\n  \u001b[90m2 |\u001b[0m \u001b[36mimport\u001b[0m { getBlogs } \u001b[36mfrom\u001b[0m \u001b[32m\"../services/blogs\"\u001b[0m;\n  \u001b[90m3 |\u001b[0m \u001b[36mimport\u001b[0m \u001b[33mLink\u001b[0m \u001b[36mfrom\u001b[0m \u001b[32m\"next/link\"\u001b[0m;\n  \u001b[90m4 |\u001b[0m\n\nEcmascript file had an error\n\n\n    at Object.getCompilationErrors (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\hot-reloader-turbopack.js:1518:37)\n    at DevBundlerService.getCompilationError (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\lib\\dev-bundler-service.js:63:55)\n    at DevServer.getCompilationError (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:692:42)\n    at DevServer.findPageComponents (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\dev\\next-dev-server.js:662:43)\n    at async DevServer.renderErrorToResponseImpl (C:\\Users\\SYLVESTER\\Desktop\\My projects\\Blogs\\blogs\\node_modules\\next\\dist\\server\\base-server.js:2060:26)"},"gip":true,"scriptLoader":[]}</script></body></html>
+  12 |       `Failed to reset database: ${response.status} ${response.statusText} - ${errorText}`,
+  13 |     )
+  14 |   }
+  15 | }
+  16 | 
+  17 | export const createUser = async (
+  18 |   username: string,
+  19 |   name: string,
+  20 |   password: string,
+  21 | ) => {
+  22 |   const response = await fetch(`${baseUrl}/api/testing/users`, {
+  23 |     method: "POST",
+  24 |     headers: {
+  25 |       "Content-Type": "application/json",
+  26 |     },
+  27 |     body: JSON.stringify({ username, name, password }),
+  28 |   })
+  29 |   if (!response.ok) {
+  30 |     const errorText = await response.text()
+  31 |     throw new Error(
+  32 |       `Failed to create user: ${response.status} ${response.statusText} - ${errorText}`,
+  33 |     )
+  34 |   }
+  35 |   return response.json()
+  36 | }
+  37 | 
+  38 | export const loginUser = async (
+  39 |   page: Page,
+  40 |   username: string,
+  41 |   password: string,
+  42 | ) => {
+  43 |   await page.goto("/login")
+  44 |   await page.getByLabel("Username", { exact: true }).fill(username)
+  45 |   await page.getByLabel("Password", { exact: true }).fill(password)
+  46 |   await page.getByRole("button", { name: "Login" }).click()
+  47 |   // Wait for navigation or notification
+  48 |   await page.waitForURL("/")
+  49 | }
+  50 | 
+  51 | export const createBlog = async (
+  52 |   page: Page,
+  53 |   title: string,
+  54 |   author: string,
+  55 |   url: string,
+  56 | ) => {
+  57 |   await page.goto("/blogs/new")
+  58 |   await page.getByLabel("Title", { exact: true }).fill(title)
+  59 |   await page.getByLabel("Author", { exact: true }).fill(author)
+  60 |   await page.getByLabel("URL", { exact: true }).fill(url)
+  61 |   await page.getByRole("button", { name: "Create" }).click()
+  62 |   // Wait for navigation to blogs page
+  63 |   await page.waitForURL("/blogs")
+  64 | }
+```
